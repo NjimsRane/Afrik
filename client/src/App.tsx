@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
+import {lazy, Suspense} from "react";
+import {Header, Footer} from "./layouts";
+import s from "./App.module.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const Home = lazy(() => import("./pages/home/Home"));
+const Contact = lazy(() => import("./pages/contact/Contact"));
+const Fashion = lazy(() => import("./pages/fashion/Fashion"));
+const LifeStyle = lazy(() => import("./pages/lifesStyle/LifeStyle"));
+const Decoration = lazy(() => import("./pages/decoration/Decoration"));
+const About = lazy(() => import("./pages/about/About"));
+const Account = lazy(() => import("./pages/account/Account"));
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const Layout = () => {
+	return (
+		<>
+			<Header />
+			<Outlet />
+			<Footer />
+		</>
+	);
+};
 
-export default App
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: (
+			<Suspense fallback={<div>loading...</div>}>
+				<Layout />
+			</Suspense>
+		),
+		children: [
+			{
+				path: "/",
+				element: <Home />,
+			},
+			{
+				path: "/about",
+				element: <About />,
+			},
+			{
+				path: "/contact",
+				element: <Contact />,
+			},
+			{
+				path: "/decoration",
+				element: <Decoration />,
+			},
+			{
+				path: "/fashion",
+				element: <Fashion />,
+			},
+			{
+				path: "/lifestyle",
+				element: <LifeStyle />,
+			},
+			{
+				path: "/account",
+				element: <Account />,
+			},
+		],
+	},
+]);
+
+const App = () => {
+	return (
+		<div className={s.app}>
+			<RouterProvider router={router} />
+		</div>
+	);
+};
+
+export default App;

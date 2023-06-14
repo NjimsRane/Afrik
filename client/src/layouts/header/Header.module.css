@@ -1,0 +1,104 @@
+.header {
+	padding: 1rem 2rem;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.logo {
+	display: inline-block;
+	width: 5rem;
+	height: auto;
+	object-fit: cover;
+}
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 7rem;
+	background-color: #fff;
+	width: 100%;
+	left: 0;
+	transition: all 0.5s ease;
+	height: 0;
+	overflow: hidden;
+	z-index: 999;
+}
+.show {
+	height: calc(100vh - 7.5rem);
+}
+
+.rightHeader {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+.hamburgerMenu {
+	cursor: pointer;
+	padding: 1rem;
+	display: grid;
+	place-items: center;
+}
+.hamburger {
+	display: block;
+	width: 3rem;
+	height: 0.3rem;
+	background-color: var(--tertiary);
+	border-radius: 2rem;
+	transition: all 0.5s ease;
+}
+
+.hamburger:nth-child(2) {
+	margin-block: 0.3rem;
+}
+
+.toggleMenu.hamburger:nth-child(1) {
+	transform: translateY(1rem) rotate(45deg) rotate(-180deg);
+}
+.toggleMenu.hamburger:nth-child(2) {
+	width: 0;
+}
+.toggleMenu.hamburger:nth-child(3) {
+	transform: translateY(-0.3rem) rotate(-45deg) rotate(180deg);
+}
+
+/* MEDIA QUERY */
+@media screen and (min-width: 712px) {
+	.header {
+		padding-inline: 4rem;
+	}
+}
+@media screen and (min-width: 900px) {
+	.header {
+		padding-inline: 8rem;
+	}
+	nav {
+		display: block;
+		position: static;
+		background: transparent;
+		left: unset;
+		transition: none;
+		height: auto;
+		overflow: unset;
+		flex: 1;
+		z-index: unset;
+	}
+	.show {
+		height: auto;
+	}
+	.hamburgerMenu {
+		display: none;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.header {
+		padding-inline: 10rem;
+	}
+}

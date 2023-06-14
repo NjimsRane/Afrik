@@ -1,0 +1,63 @@
+.hero {
+	position: relative;
+	height: calc(100vh - 7.5rem);
+	width: 100%;
+	overflow: hidden;
+}
+
+.carouselWrapper {
+	display: flex;
+	width: 100%;
+	/* height: 100%; */
+	overflow: hidden;
+}
+
+.slider {
+	flex-shrink: 0;
+	width: 100%;
+	height: calc(100vh - 7.5rem);
+	transition: transform 0.5s ease-in-out;
+	position: relative;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+h2 {
+	position: absolute;
+	font-size: 2rem;
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	animation: anim 0.5s;
+}
+
+.control {
+	background-color: var(--secondary);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #fff;
+	border-radius: 2px;
+	display: grid;
+	place-items: center;
+	padding: 0.2rem;
+}
+.control:nth-of-type(1) {
+	left: 2%;
+}
+.control:nth-of-type(2) {
+	right: 2%;
+}
+
+@keyframes anim {
+	0% {
+		transform: translateY(-15rem);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,0 +1,36 @@
+.menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    gap:2rem;
+    padding-block:2rem;
+}
+
+.menu li{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size:1.3rem;
+    letter-spacing:1px;
+    transition:hover 0.5s ease;
+}
+
+.normal{
+    color:var(--secondary);
+}
+.active,
+.menu a:hover{
+    color:rgb(240, 111, 12)
+}
+
+
+
+
+
+/* MEDIA QUERY */
+
+@media screen and (min-width:900px){
+   .menu{
+    flex-direction:row;
+   }
+}

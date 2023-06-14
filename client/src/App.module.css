@@ -1,0 +1,42 @@
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: in;
+}
+
+:root {
+	--primary: #3a3534;
+	--secondary: #5e7376;
+	/* --secondary:#637381; */
+	--tertiary: #212b36;
+}
+
+a {
+	text-decoration: none;
+	color: initial;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: none;
+}
+
+body {
+	min-height: 100vh;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: rgb(245, 245, 245);
+}
