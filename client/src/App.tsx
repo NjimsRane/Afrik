@@ -1,4 +1,4 @@
-import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
+import {Outlet, Route, Routes} from "react-router-dom";
 import {lazy, Suspense} from "react";
 import {Header, Footer} from "./layouts";
 import s from "./App.module.css";
@@ -8,8 +8,9 @@ const Contact = lazy(() => import("./pages/contact/Contact"));
 const Fashion = lazy(() => import("./pages/fashion/Fashion"));
 const LifeStyle = lazy(() => import("./pages/lifesStyle/LifeStyle"));
 const Decoration = lazy(() => import("./pages/decoration/Decoration"));
-const About = lazy(() => import("./pages/about/About"));
+const Products = lazy(() => import("./pages/products/Products"));
 const Account = lazy(() => import("./pages/account/Account"));
+const Baskets = lazy(() => import("./pages/products/Baskets"));
 
 const Layout = () => {
 	return (
@@ -21,51 +22,26 @@ const Layout = () => {
 	);
 };
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: (
-			<Suspense fallback={<div>loading...</div>}>
-				<Layout />
-			</Suspense>
-		),
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/about",
-				element: <About />,
-			},
-			{
-				path: "/contact",
-				element: <Contact />,
-			},
-			{
-				path: "/decoration",
-				element: <Decoration />,
-			},
-			{
-				path: "/fashion",
-				element: <Fashion />,
-			},
-			{
-				path: "/lifestyle",
-				element: <LifeStyle />,
-			},
-			{
-				path: "/account",
-				element: <Account />,
-			},
-		],
-	},
-]);
-
 const App = () => {
 	return (
 		<div className={s.app}>
-			<RouterProvider router={router} />
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<Suspense fallback={<div>...loading</div>}>{<Layout />}</Suspense>
+					}
+				>
+					<Route index element={<Home />} />
+					<Route path="/products" element={<Products />} />
+					<Route path="/baskets" element={<Baskets />} />
+					<Route path="/fashion" element={<Fashion />} />
+					<Route path="/decoration" element={<Decoration />} />
+					<Route path="/account" element={<Account />} />
+					<Route path="/lifestyle" element={<LifeStyle />} />
+					<Route path="/contact" element={<Contact />} />
+				</Route>
+			</Routes>
 		</div>
 	);
 };
