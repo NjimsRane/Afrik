@@ -1,9 +1,11 @@
+import {useEffect} from "react";
 
-import s from './Account.module.css'
+import s from "./Account.module.css";
 const Account = () => {
-  return (
-    <div className={s.account}>Account</div>
-  )
-}
+	useEffect(() => {
+		document.title = "Account | Afrik";
+	}, []);
+	return <div className={s.account}>Account</div>;
+};
 
-export default Account
+export default Account;

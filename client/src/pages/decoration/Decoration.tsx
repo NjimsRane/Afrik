@@ -1,9 +1,12 @@
+import {useEffect} from "react";
+import s from "./Decoration.module.css";
 
-import s from './Decoration.module.css'
 const Decoration = () => {
-  return (
-    <div className={s.decoration}>Decoration</div>
-  )
-}
+	useEffect(() => {
+		document.title = "Decor | Afrik";
+	}, []);
 
-export default Decoration
+	return <div className={s.decoration}>Decoration</div>;
+};
+
+export default Decoration;
