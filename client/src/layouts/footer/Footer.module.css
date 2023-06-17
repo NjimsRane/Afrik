@@ -1,0 +1,15 @@
+.footer {
+	padding: 1rem 2rem;
+	background-color: #000;
+	height: 2rem;
+	color: #fff;
+	text-align: center;
+}
+
+.text {
+	font-size: 1.4rem;
+}
+.text span:last-of-type {
+	color: crimson;
+	font-size: 2rem;
+}

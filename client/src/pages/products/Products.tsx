@@ -20,10 +20,6 @@ const Products = () => {
 			<Link to={`/products/jewelry`}>
 				<img src={jewelry} alt="banner" />
 			</Link>
-
-			{/* <img src={banner} alt="" />
-			<img src={banner} alt="" />
-			<img src={banner} alt="" /> */}
 		</div>
 	);
 };

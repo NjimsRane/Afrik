@@ -1,17 +1,40 @@
 import jewelryBanner from "../../assets/images/products/Jewelry.jpg";
 import s from "./Products.module.css";
 import jewelry from "../../data/jewelry.json";
+import {useEffect} from "react";
 
 const Jewelry = () => {
+	useEffect(() => {
+		document.title = "Jewelry-Products | AFRI-K ";
+	}, []);
+
+	useEffect(() => {
+		console.count("soule");
+
+		const reveal = () => {
+			const reveals = document.querySelectorAll(`.${s.reveal}`);
+
+			for (let i = 0; i < reveals.length; i++) {
+				const windowHeight = window.innerHeight;
+				const revealTop = reveals[i].getBoundingClientRect().top;
+				const revealPoint = 150;
+				revealTop < windowHeight - revealPoint
+					? reveals[i].classList.add(`${s.active}`)
+					: reveals[i].classList.remove(`${s.active}`);
+			}
+		};
+
+		window.addEventListener("scroll", reveal);
+	}, []);
+
 	return (
 		<div className={s.basketsContainer}>
 			<div className={s.banner}>
 				<img src={jewelryBanner} alt="banner" />
 			</div>
 			<div className={s.baskets}>
-				<div className={s.basket}>
-					<hr />
-					<h3 className={s.title}>njimoke rane soulemnaou</h3>
+				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
 						{jewelry.beads.map((item) => (
 							<div key={item.id}>
@@ -20,9 +43,9 @@ const Jewelry = () => {
 						))}
 					</div>
 				</div>
-				<div className={s.basket}>
+				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<hr />
-					<h3 className={s.title}>njimoke rane soulemnaou</h3>
+					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
 						{jewelry.jewelry.map((item) => (
 							<div key={item.id}>
@@ -31,8 +54,9 @@ const Jewelry = () => {
 						))}
 					</div>
 				</div>
-				<div className={s.basket}>
-					<h3 className={s.title}>njimoke rane soulemnaou</h3>
+				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+					<hr />
+					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
 						{jewelry.brass.map((item) => (
 							<div key={item.id}>

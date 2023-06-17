@@ -15,7 +15,6 @@ html {
 :root {
 	--primary: #3a3534;
 	--secondary: #5e7376;
-	/* --secondary:#637381; */
 	--tertiary: #212b36;
 }
 
@@ -38,4 +37,5 @@ button {
 body {
 	min-height: 100vh;
 	font-family: Georgia, "Times New Roman", Times, serif;
+	user-select: none;
 }

@@ -1,6 +1,6 @@
 .products {
 	width: 100%;
-	padding-inline: 2rem;
+	/* padding-inline: 2rem; */
 }
 
 .products img {
@@ -53,37 +53,15 @@
 	height: 16rem;
 	object-fit: contain;
 }
-
-/* .baskets {
-	width: 100%;
-	min-height: 100vh;
+.toTop {
+	transform: translateY(150px);
+	opacity: 0;
+	transition: all 2s ease;
 }
-.banner {
-	display: block;
-	width: 100%;
-	height: 40rem;
-	object-fit: cover;
+.toTop.active {
+	transform: translateY(0);
+	opacity: 1;
 }
-.basketContainer {
-	width: 100%;
-	height: 100vh;
-	background-color: white;
-	display: flex;
-	flex-direction: column;
-	gap: 10rem;
-}
-
-.basket {
-	display: grid;
-
-	background-color: crimson;
-}
-
-.basket img {
-	height: 15rem;
-	width: 100%;
-	object-fit: contain;
-} */
 
 /* MEDIA QUERY */
 @media screen and (min-width: 712px) {
