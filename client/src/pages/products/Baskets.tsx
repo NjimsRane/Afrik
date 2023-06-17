@@ -30,8 +30,8 @@ const Baskets = () => {
 			<div className={s.banner}>
 				<img src={banner} alt="banner" />
 			</div>
-			<div className={s.baskets}>
-				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+			<article className={s.baskets}>
+				<section className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
 						{basket.woven.map((item) => (
@@ -40,8 +40,8 @@ const Baskets = () => {
 							</div>
 						))}
 					</div>
-				</div>
-				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+				</section>
+				<section className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<hr />
 					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
@@ -51,8 +51,8 @@ const Baskets = () => {
 							</div>
 						))}
 					</div>
-				</div>
-				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+				</section>
+				<section className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<hr />
 					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
@@ -62,8 +62,8 @@ const Baskets = () => {
 							</div>
 						))}
 					</div>
-				</div>
-			</div>
+				</section>
+			</article>
 		</div>
 	);
 };

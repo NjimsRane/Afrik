@@ -32,8 +32,8 @@ const Jewelry = () => {
 			<div className={s.banner}>
 				<img src={jewelryBanner} alt="banner" />
 			</div>
-			<div className={s.baskets}>
-				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+			<article className={s.baskets}>
+				<section className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
 						{jewelry.beads.map((item) => (
@@ -42,8 +42,8 @@ const Jewelry = () => {
 							</div>
 						))}
 					</div>
-				</div>
-				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+				</section>
+				<section className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<hr />
 					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
@@ -53,8 +53,8 @@ const Jewelry = () => {
 							</div>
 						))}
 					</div>
-				</div>
-				<div className={`${s.basket} ${s.reveal} ${s.toTop}`}>
+				</section>
+				<section className={`${s.basket} ${s.reveal} ${s.toTop}`}>
 					<hr />
 					<h3 className={s.title}>Lorem ipsum dolor sit amet.</h3>
 					<div className={s.items}>
@@ -64,8 +64,8 @@ const Jewelry = () => {
 							</div>
 						))}
 					</div>
-				</div>
-			</div>
+				</section>
+			</article>
 		</div>
 	);
 };
