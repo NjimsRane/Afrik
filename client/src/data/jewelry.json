@@ -1,0 +1,109 @@
+{
+	"beads": [
+		{
+			"id": 1,
+			"imgUrl": "/beads/b1.png"
+		},
+		{
+			"id": 2,
+			"imgUrl": "/beads/b2.png"
+		},
+
+		{
+			"id": 3,
+			"imgUrl": "/beads/b3.jpg"
+		},
+		{
+			"id": 4,
+			"imgUrl": "/beads/b4.jpg"
+		},
+		{
+			"id": 5,
+			"imgUrl": "/beads/b5.jpg"
+		},
+		{
+			"id": 6,
+			"imgUrl": "/beads/b6.jpg"
+		},
+		{
+			"id": 7,
+			"imgUrl": "/beads/b7.jpg"
+		},
+
+		{
+			"id": 8,
+			"imgUrl": "/beads/b8.jpg"
+		},
+		{
+			"id": 9,
+			"imgUrl": "/beads/b10.jpg"
+		}
+	],
+	"brass": [
+		{
+			"id": 10,
+			"imgUrl": "/brass/d1.png"
+		},
+		{
+			"id": 11,
+			"imgUrl": "/brass/d2.png"
+		},
+
+		{
+			"id": 12,
+			"imgUrl": "/brass/d3.png"
+		},
+		{
+			"id": 13,
+			"imgUrl": "/brass/d4.png"
+		},
+		{
+			"id": 14,
+			"imgUrl": "/brass/d5.png"
+		},
+		{
+			"id": 15,
+			"imgUrl": "/brass/d6.png"
+		},
+		{
+			"id": 16,
+			"imgUrl": "/brass/d7.png"
+		}
+	],
+
+	"jewelry": [
+		{
+			"id": 17,
+			"imgUrl": "/jewelry/j1.jpg"
+		},
+		{
+			"id": 18,
+			"imgUrl": "/jewelry/j2.jpg"
+		},
+		{
+			"id": 19,
+			"imgUrl": "/jewelry/j3.jpg"
+		},
+
+		{
+			"id": 20,
+			"imgUrl": "/jewelry/j4.jpg"
+		},
+		{
+			"id": 21,
+			"imgUrl": "/jewelry/j5.jpg"
+		},
+		{
+			"id": 22,
+			"imgUrl": "/jewelry/j6.jpg"
+		},
+		{
+			"id": 23,
+			"imgUrl": "/jewelry/j7.jpg"
+		},
+		{
+			"id": 24,
+			"imgUrl": "/jewelry/j8.jpg"
+		}
+	]
+}

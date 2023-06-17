@@ -11,6 +11,8 @@ const Decoration = lazy(() => import("./pages/decoration/Decoration"));
 const Products = lazy(() => import("./pages/products/Products"));
 const Account = lazy(() => import("./pages/account/Account"));
 const Baskets = lazy(() => import("./pages/products/Baskets"));
+const Trinkets = lazy(() => import("./pages/products/Trinkets"));
+const Jewelry = lazy(() => import("./pages/products/Jewelry"));
 
 const Layout = () => {
 	return (
@@ -33,8 +35,10 @@ const App = () => {
 					}
 				>
 					<Route index element={<Home />} />
-					<Route path="/products" element={<Products />} />
-					<Route path="/baskets" element={<Baskets />} />
+					<Route path="/products" element={<Products />}></Route>
+					<Route path="/products/baskets" element={<Baskets />} />
+					<Route path="/products/trinkets" element={<Trinkets />} />
+					<Route path="/products/jewelry" element={<Jewelry />} />
 					<Route path="/fashion" element={<Fashion />} />
 					<Route path="/decoration" element={<Decoration />} />
 					<Route path="/account" element={<Account />} />
