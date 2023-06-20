@@ -1,34 +1,38 @@
-import {useEffect, useState} from "react";
+import {FormEvent, useEffect, useState} from "react";
 import {FormInput} from "../../components";
 import s from "../../components/formInput/FormInput.module.css";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
 	const [values, setValues] = useState({
 		email: "",
-		name: "",
+		fullname: "",
 		password: "",
 		confirmPassword: "",
 	});
+	const [err, setErr] = useState(null);
+	console.log(err);
 
 	const inputs = [
 		{
 			id: 1,
+			name: "fullname",
+			type: "text",
+			label: "fullname",
+			required: true,
+			errorMessage: "Please enter your full name",
+			// pattern: "^[a-z/s]*$",
+		},
+		{
+			id: 2,
 			name: "email",
 			type: "email",
 			label: "email",
 			required: true,
 			errorMessage: "Please enter a valid email format",
 		},
-		{
-			id: 2,
-			name: "name",
-			type: "text",
-			label: "fullname",
-			required: true,
-			errorMessage: "Please enter your full name",
-			pattern: "^[a-z/s]*$",
-		},
+
 		{
 			id: 3,
 			name: "password",
@@ -55,9 +59,16 @@ const Register = () => {
 		setValues({...values, [e.target.name]: e.target.value});
 	};
 
-	const handleClick = (e) => {
+	const handleClick = async (e: FormEvent) => {
 		e.preventDefault();
+
+		try {
+			await axios.post("http://localhost:8080/api/auths/register", values);
+		} catch (err) {
+			setErr(err.response.data);
+		}
 	};
+	// console.log(values);
 
 	useEffect(() => {
 		document.title = "Register | AFRI-K ";
@@ -67,7 +78,7 @@ const Register = () => {
 		<div className={s.form}>
 			<div className={s.box}>
 				<h2>sign up</h2>
-				<form onClick={handleClick}>
+				<form>
 					<div>
 						{inputs.map((input) => (
 							<FormInput
@@ -78,8 +89,10 @@ const Register = () => {
 							/>
 						))}
 					</div>
-
-					<button type="submit">sign up</button>
+					<span className={s.error}>{err && err}</span>
+					<button type="submit" onClick={handleClick}>
+						sign up
+					</button>
 					<p>
 						Already have an account ? <Link to="/login">login</Link>
 					</p>

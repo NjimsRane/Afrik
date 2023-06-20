@@ -6,7 +6,7 @@ import { db } from "../connect.js";
 
 
 const register = (req, res) => {
-    const q = 'SELECT * FROM clients WHERE fullname=?';
+    const q = 'SELECT * FROM clients WHERE fullname = ?';
 
     db.query(q, [req.body.fullname], (err, data) => {
         if (err) return res.status(500).json(err);
@@ -15,7 +15,7 @@ const register = (req, res) => {
         const salt = bcryptjs.genSaltSync(10);
         const hashedPassword = bcryptjs.hashSync(req.body.password, salt);
 
-        const q = "INSERT INTO clients (fullname, email, password) VALUES(?)";
+        const q = "INSERT INTO clients (`fullname`, `email`, `password`) VALUES(?)";
         const values = [req.body.fullname, req.body.email, hashedPassword];
 
         db.query(q, [values], (err, data) => {

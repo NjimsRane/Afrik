@@ -1,11 +1,13 @@
-import {useEffect, useState, useContext} from "react";
+import {useEffect, useState, useContext, ChangeEvent, FormEvent} from "react";
 import {FormInput} from "../../components";
 import s from "../../components/formInput/FormInput.module.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {UserContext} from "../../context/UserContext";
 
 const Login = () => {
 	const {login} = useContext(UserContext);
+	const [err, setErr] = useState(null);
+	const navigate = useNavigate();
 
 	const [values, setValues] = useState({
 		email: "",
@@ -31,11 +33,11 @@ const Login = () => {
 		},
 	];
 
-	const handleChange = (e) => {
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setValues({...values, [e.target.name]: e.target.value});
 	};
 
-	const handleClick = (e) => {
+	const handleClick = (e: FormEvent) => {
 		e.preventDefault();
 	};
 
@@ -43,8 +45,14 @@ const Login = () => {
 		document.title = "Login | AFRI-K ";
 	}, []);
 
-	const handleLogin = () => {
-		login();
+	const handleLogin = async (e: FormEvent) => {
+		e.preventDefault();
+		try {
+			await login(values);
+			navigate("/");
+		} catch (err) {
+			setErr(err.response.data);
+		}
 	};
 
 	return (
@@ -62,7 +70,7 @@ const Login = () => {
 							/>
 						))}
 					</div>
-
+					<span className={s.error}>{err && err}</span>
 					<button type="submit" onClick={handleLogin}>
 						login
 					</button>
