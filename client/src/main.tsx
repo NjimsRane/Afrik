@@ -6,12 +6,12 @@ import ScrollToTop from "./utilities/ScrollToTop.tsx";
 import UserContextProvider from "./context/UserContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<React.StrictMode>
-		<UserContextProvider>
+	<UserContextProvider>
+		<React.StrictMode>
 			<BrowserRouter>
 				<ScrollToTop />
 				<App />
 			</BrowserRouter>
-		</UserContextProvider>
-	</React.StrictMode>
+		</React.StrictMode>
+	</UserContextProvider>
 );
