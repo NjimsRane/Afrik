@@ -1,9 +1,12 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import {FormInput} from "../../components";
 import s from "../../components/formInput/FormInput.module.css";
 import {Link} from "react-router-dom";
+import {UserContext} from "../../context/UserContext";
 
 const Login = () => {
+	const {login} = useContext(UserContext);
+
 	const [values, setValues] = useState({
 		email: "",
 		password: "",
@@ -40,6 +43,10 @@ const Login = () => {
 		document.title = "Login | AFRI-K ";
 	}, []);
 
+	const handleLogin = () => {
+		login();
+	};
+
 	return (
 		<div className={s.form}>
 			<div className={s.box}>
@@ -56,7 +63,9 @@ const Login = () => {
 						))}
 					</div>
 
-					<button type="submit">login</button>
+					<button type="submit" onClick={handleLogin}>
+						login
+					</button>
 					<p>
 						Don`t have an account ? <Link to="/register">register</Link>
 					</p>

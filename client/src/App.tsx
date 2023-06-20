@@ -47,8 +47,22 @@ const App = () => {
 					<Route path="/lifestyle" element={<LifeStyle />} />
 					<Route path="/contact" element={<Contact />} />
 				</Route>
-				<Route path="/login" element={<Login />} />
-				<Route path="/register" element={<Register />} />
+				<Route
+					path="/login"
+					element={
+						<Suspense fallback={<div>...loading</div>}>
+							<Login />
+						</Suspense>
+					}
+				/>
+				<Route
+					path="/register"
+					element={
+						<Suspense fallback={<div>...loading</div>}>
+							<Register />
+						</Suspense>
+					}
+				/>
 			</Routes>
 		</div>
 	);
