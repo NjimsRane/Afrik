@@ -1,0 +1,117 @@
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+		url("../../../src/assets/images/form1.JPG");
+	background-position: center;
+	background-size: cover;
+	padding-inline: 1rem;
+}
+.box {
+	width: 32rem;
+	background-color: var(--primary);
+	padding: 4rem;
+	border-radius: 3px;
+}
+
+.box h2 {
+	text-align: center;
+	text-transform: capitalize;
+	font-size: 2rem;
+	color: #fff;
+	margin-bottom: 6rem;
+}
+
+.formInput {
+	position: relative;
+	width: 100%;
+	margin-block: 3rem;
+}
+
+.formInput input {
+	position: relative;
+	width: 100%;
+	padding: 0.8rem 1rem;
+	letter-spacing: 1px;
+	z-index: 10;
+	color: #fff;
+}
+
+.formInput span {
+	position: absolute;
+	text-transform: capitalize;
+	padding: 0.5rem;
+	top: 0;
+	left: 0;
+	font-size: 1.4rem;
+	color: #fff;
+	pointer-events: none;
+	transition: all 0.5s ease;
+	letter-spacing: 1px;
+}
+.formInput input:valid ~ span,
+.formInput input:focus ~ span {
+	color: var(--secondary);
+	transform: translate(-0.5rem, -2rem);
+	font-size: 1rem;
+}
+.formInput i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: var(--tertiary);
+	width: 100%;
+	height: 0.2rem;
+	transition: all 0.5s ease;
+	border-radius: 3px;
+	pointer-events: none;
+}
+.formInput input:valid ~ i,
+.formInput input:focus ~ i {
+	background-color: var(--tertiary);
+	height: 3rem;
+}
+.formInput small {
+	position: absolute;
+	padding-inline: 0.5rem;
+	color: crimson;
+	letter-spacing: 1px;
+	display: none;
+}
+
+.formInput input:invalid[focused="true"] ~ small {
+	display: block;
+}
+
+.formInput input:invalid[focused="true"] ~ i {
+	background-color: crimson;
+	height: 3rem;
+}
+.formInput input:invalid[focused="true"] ~ span {
+	color: crimson;
+	transform: translate(-0.5rem, -2rem);
+	font-size: 1rem;
+}
+
+.form button {
+	text-transform: capitalize;
+	width: 10rem;
+	padding-block: 0.5rem;
+	border-radius: 3px;
+	background-color: var(--tertiary);
+	color: #fff;
+}
+.form p {
+	margin-top: 1rem;
+	text-align: center;
+	color: #fff;
+}
+.form a {
+	margin-left: 0.3rem;
+	text-transform: capitalize;
+	color: white;
+	text-decoration: underline;
+	letter-spacing: 1px;
+}

@@ -34,8 +34,14 @@ button {
 	background-color: none;
 }
 
+input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
 body {
 	min-height: 100vh;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	user-select: none;
 }

@@ -13,6 +13,8 @@ const Account = lazy(() => import("./pages/account/Account"));
 const Baskets = lazy(() => import("./pages/products/Baskets"));
 const Trinkets = lazy(() => import("./pages/products/Trinkets"));
 const Jewelry = lazy(() => import("./pages/products/Jewelry"));
+const Login = lazy(() => import("./pages/login/Login"));
+const Register = lazy(() => import("./pages/register/Register"));
 
 const Layout = () => {
 	return (
@@ -45,6 +47,8 @@ const App = () => {
 					<Route path="/lifestyle" element={<LifeStyle />} />
 					<Route path="/contact" element={<Contact />} />
 				</Route>
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
 			</Routes>
 		</div>
 	);
